@@ -137,7 +137,7 @@ a {
     color: var(--dark);
 }
 
-.cd-login {
+.py-22 {
     padding: 22px 0;
 }
 .cd-loginForm {max-width: 640px;}
@@ -308,6 +308,34 @@ section.cd-Strapline {
     margin-top: 1rem;
 }
 
+/* T&C */
+.cd-termsTxtPara p {font-size: 20px;color: var(--dark);line-height: 33px;}
+.cd-termsTxtPara ul {list-style-type: disc;padding-left: 3rem;margin-bottom: 20px;}
+.cd-termsTxtPara ul li {font-size: 20px;color: var(--dark);line-height: 33px;}
+.cd-termsTxtPara .cd-link {color: #335075;text-decoration: underline;}
+.cd-terms .cd-grpBtns {display: flex;gap: 2rem;align-items: baseline;font-size: 16px;font-family: "Noto Sans", sans-serif;margin-top: 10px;}
+.cd-terms .cd-grpBtns .cd-accept {background-color: #335075;color: var(--white);box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);padding: 11px 17px;border-radius: 3px;position: relative;}
+.cd-terms .cd-grpBtns .cd-accept:not([disabled]):focus, .cd-terms .cd-grpBtns .cd-accept:not([disabled]):hover {
+    background-color: #335075;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #335075;
+}
+.cd-terms .cd-grpBtns .cd-accept:not([disabled]):hover:before {
+        outline: none;
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px #fff;
+    z-index: 1;
+}
+.cd-terms .cd-grpBtns .cd-reportbtnlink {padding: 11px 17px;}
+
 /* ==== footer ==== */
 .cd-section-footer {
     padding: 24px 0;
@@ -332,4 +360,17 @@ section.cd-Strapline {
 .cd-section-footer p {
     color: #ffffffb3;
     margin: 0;
+}
+.cd-footermenu {display: flex;gap: 1rem;justify-content: space-between;align-items: center;}
+
+/* =============================================
+    responsive 
+========================================================= */
+@media (max-width: 575px) {
+    .cd-section-footer .cd-footerMenu ul {flex-direction: column;gap: 2px;align-items: start;}
+    .cd-section-footer .cd-footerMenu ul .cd-link::before {left: 0;right: unset;top: 48%;}
+    .cd-footerMenu ul li:last-child .cd-link::before {display: block;content: '';}
+    .cd-footermenu {flex-direction: column;}
+    a.cd-footlogo svg {min-width: 140px !important;}
+    .cd-terms .cd-grpBtns {justify-content: center;}
 }
