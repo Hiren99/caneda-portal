@@ -53,3 +53,34 @@ $(document).ready(function () {
     }
 
 });
+
+/* -------- mobile user login grp btn menu ---------- */
+$(document).ready(function () {
+    // Open menu
+    $('.cd-offcanvas-backdrop').on('click', function () {
+        if (window.innerWidth <= 767) {
+            $('.cd-offcanvas-menu').addClass('active');
+            $('#mainContent').css('margin-left', '250px');
+        }
+    });
+
+    // Close menu using close icon
+    $('.cd-offcanvas-close').on('click', function () {
+        $('.cd-offcanvas-menu').removeClass('active');
+        $('#mainContent').css('margin-left', '0');
+    });
+
+    // Close menu when clicking outside
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.cd-offcanvas-menu, .cd-offcanvas-backdrop').length) {
+            $('.cd-offcanvas-menu').removeClass('active');
+            $('#mainContent').css('margin-left', '0');
+        }
+    });
+
+});
+
+/* -------- set tooltip ------------ */
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+/* -------- set tooltip # ------------ */
